@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example 21-1</title>
+<script src="../../../js/jquery-2.1.1.min.js"> </script>
+<script>
+$(function() {
+	$('button').click(function() {
+		$.ajax({
+			url: 'random-num.php', 
+			success: function(result) {
+				alert('เลขสุ่มที่ได้คือ: ' + result);
+			}
+		});
+	});
+});
+
+function showResult(result) {
+	//alert('เลขสุ่มที่ได้คือ: ' + result);
+}
+</script>
+</head>
+
+<body>
+	<button>อ่านค่าเลขสุ่มจากฝั่ง server</button>
+</body>
+</html>

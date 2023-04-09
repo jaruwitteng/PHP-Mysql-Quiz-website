@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test</title>
+<link href="../../js/jquery-ui.min.css" rel="stylesheet">
+<script src="../../js/jquery-2.1.1.min.js"> </script>
+<script src="../../js/jquery-ui.min.js"> </script>
+<script>
+$(function() {
+	$('#bt').click(function() {
+		$('#dlg').dialog({title:'ข้อผิดพลาด', modal: true});
+	});
+});
+</script>
+</head>
+
+<body>
+<button id="bt">Show Dialog</button>
+<div id="dlg" style="display: none;">กรุณาล็อกอินเข้าสู่ระบบก่อนจึงจะสามารถดาวน์โหลดได้</div>
+<div id="login" style="display: none;">
+Login: <input type="text"><br>
+Pswd: <input type="password"> 
+<button type="button">OK</button> 
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example 22-3</title>
+<style>
+	* {
+		font: 14px tahoma;
+	}
+	body {
+		background: url(bg.jpg);
+	}
+	article {
+		width: 300px;
+	}
+	aside {
+		width: 210px;
+		height: 100%;
+		background: #abc;
+		padding: 5px;
+		float: right;
+		border-radius: 5px;
+	}
+	#date {
+		
+	}
+	textarea {
+		width: 200px;
+		height: 50px;
+		resize: none;
+		overflow: auto;
+	}
+	button {
+		width: 60px;
+		background: steelblue;
+		color: white;
+	}
+	button:hover {
+		background: aqua;
+		color: red;
+	}
+	#date, textarea, button {
+		border: solid 1px gray;
+		border-radius: 3px;
+		padding: 2px;
+	}
+</style>
+<link href="../../../js/jquery-ui.min.css" rel="stylesheet">
+<script src="../../../js/jquery-2.1.1.min.js"> </script>
+<script src="../../../js/jquery-ui.min.js"> </script>
+<script src="../../../js/jquery.blockUI.js"></script>
+<script>
+$(function() {
+	$('#date').datepicker({dateFormat: 'yy/mm/dd'});
+	
+	//เมื่อคลิกที่ปฏทินิ ให้ส่งค่าวันเดือนปีผ่าน AJAX ไปยังเซิร์ฟเวอร์
+	$('#calendar').datepicker({
+		dateFormat: 'yy/mm/dd',
+		onSelect: function(date) {
+			$.ajax({
+				url: 'note.php',
+				data: {'date': date},
+				type: "post",
+				dataType: "text",
+				success: function(result) {
+					$('article').html(result);
+				},
+				beforeSend: function() {
+					$.blockUI({message: '<h2>Loading...</h2>'});
+				},
+				complete: function() {
+					$.unblockUI();
+				}
+			});
+		}
+	});
+	
+	//เมื่อคลิกที่ปุ่ม ให้ส่งข้อมูลผ่าน AJAX ไปจัดเก็บไว้ในตารางทางฝั่งเซิร์ฟเวอร์
+	$('button').click(function() {
+		if($.trim($('#note').val())=='' || $('#date').val()=='') {
+			alert('กรุณาใส่ข้อมูลให้ครบ');
+			return;
+		}
+		$.ajax({
+			url: 'note.php',
+			data: $('form').serializeArray(),
+			type: "post",
+			dataType:"text",
+			cache:false,
+			success: function(result) {
+				$('form')[0].reset();
+				alert(result);
+			},				
+			beforeSend: function() {
+				$.blockUI({message: '<h2>Sending...</h2>'});
+			},
+			complete: function() {
+				$.unblockUI();
+			}
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<aside>
+	<div id="calendar"> </div><br>
+	<form>
+		วันเดือนปี: <br><input type="text" id="date" name="date"><br>
+   	 	สิ่งที่ทำ:<br><textarea id="note" name="note"></textarea><br>
+    	<button type="button">บันทึก</button>
+	</form>
+</aside>
+<article></article>
+</body>
+</html>

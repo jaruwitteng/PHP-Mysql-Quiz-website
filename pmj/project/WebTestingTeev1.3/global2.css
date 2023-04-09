@@ -1,0 +1,90 @@
+@charset "utf-8";
+	* {
+		font-family: tahoma;
+	}
+	body {
+		margin-top: 0px;
+		background-color: rgb(170, 161, 161);
+	}
+	#container {
+		
+		width:1500px;
+		background: white;
+		margin: auto;
+		padding: 10px 20px;
+		border-radius: 10px;
+	}
+	#container > * {
+		width: auto;
+		border: solid 1px  silver;
+		margin: auto;
+		margin-top: 10px;
+	}
+	
+	header {
+		background: rgb(235, 87, 87);
+		margin: 0px 0px 100px 0px;
+	}
+	header > div > img {
+		display: inline-block;
+		align-items: center;
+	}
+	header  div#logo {
+		display: inline-block;
+		font-size: 60px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: rgb(0, 0, 0);
+		text-shadow: 3px 3px skyblue;
+		margin: 0px 5px 15px;
+		
+	}
+	header > nav {
+		display: inline-block;
+		float: right;
+		margin: 5px 10px 5px 0px;
+	}
+	header > nav > a {
+		width: 100px;
+		text-decoration: none;
+		display: inline-block;
+		text-align: center;
+		padding: 2px 3px;
+		border-radius: 5px;
+	}
+	header > nav > a:hover {
+		background-color: aqua;	
+		transition: all 1s ease;
+		box-shadow: 3px 3px 5px rgb(61, 108, 179)	
+	}
+	header > nav > #logout:hover{
+		background-color: rgb(0, 0, 0);
+		color: rgb(214, 66, 66);
+	}
+	header > nav > a > img {
+		border: none;
+	}
+	article {
+
+	}
+	section#top {
+		width: auto;
+		background: url(images/bg_top.jpg);
+		padding: 5px;
+		
+	}
+	section#top > h3 {
+		margin: 0px;
+		color: brown;
+	}
+	footer {
+		margin-bottom: 5px !important;	
+		border: none !important;
+		text-align: center;
+		color: gray;
+	}
+	a:link, a:visited {
+		color: blue;
+	}
+	a:hover {
+		color: red;
+	}

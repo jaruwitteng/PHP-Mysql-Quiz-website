@@ -1,0 +1,78 @@
+	*:not(h3) {
+		font: 14px tahoma;
+	}
+	body {
+		background: url(bg.jpg);
+		margin: 0px;
+		min-width: 600px;
+		text-align: center;
+	}
+	header {
+		width: 100%;
+		background: #444;
+		height: 80px;
+	}
+	div#top, div#content, div#breadcrumb > section  {
+		width: 600px;
+		margin: auto;
+	}
+	nav {
+		float: right;
+		display: inline-block;
+		height: 30px;
+		text-align: left !important;
+		padding: 5px 0px;
+		margin-top: 1px;
+	}
+	div#breadcrumb {
+		display: inline-block;
+		margin: 10px auto 0px;
+		width: 100%;
+		height: 24px;
+		background: steelblue;
+		text-align: left !important;
+		padding: 5px 0px;
+		color: yellow;
+	}
+	#breadcrumb img {
+		height: 24px;
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+	article {
+		margin: 20px auto 0px;
+		width: 600px;
+		text-align: center !important;
+	}
+	header h3 {
+		float: left;
+		font: normal 26px tahoma;
+		color: aqua;
+		margin: 5px 0px;
+	}
+	header span {
+		font: normal 24px tahoma;
+		color: aqua;
+	}
+	a:hover {
+		color: red;
+	}
+	br.clear {
+		clear: both;
+	}
+	nav a {
+		display: inline-block;
+		border-right: solid 1px silver;
+		padding: 5px 15px 5px 10px;
+		color: skyblue;
+		text-decoration: none;
+		font-size: 16px;
+	}
+	nav a:first-child {
+		border-left: solid 1px silver;
+		padding-left: 15px !important;
+	}
+	a:hover {
+		color: red;
+	}
+

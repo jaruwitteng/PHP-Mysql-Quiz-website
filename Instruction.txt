@@ -1,0 +1,12 @@
+Original code from DeveloperThai: http://www.developerthai.com/pmj-source-code-how-to.html
+
+To try, using Xampp. 
+1. Following DeveloperThai
+	- place pmj in htdocs
+	- create pmj and webtesting database
+	- import pmj.sql and webtesting.sql into respective database
+2. Using Xampp Control panel
+	- Start Apache, MySQL
+3. http://localhost/pmj/project/WebTestingTeev1.3/login.php
+	- Register and login as tester to try exam
+	- Or login as examiner with id: admin, pw:abc456 to create

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Basic Form Elements</title>
+<style>
+	table {
+		border: solid 1px orangered;
+		background: lightblue;
+		margin: auto;
+		font: 14px tahoma;
+	/*	border-collapse: collapse; */
+	}
+	td {
+		padding: 3px;
+	/*	border: dashed 2px brown; */
+	}
+	textarea {
+		width: 400px;
+		height: 50px;
+	}
+	div.float, #captcha {
+		float: left;
+		margin: 5px;
+	}
+	td.center {
+		text-align:center;
+	}
+</style>
+</head>
+
+<body>
+<form method="post" action="formecho.php">
+<table>
+<tr>
+	<td>ชื่อ:<br><input type="text" name="name" size="25"></td>
+    <td>อีเมล:<br><input type="email" name="email" size="25"></td>
+</tr>
+<tr>
+	<td colspan="2">ข้อคิดเห็นของท่าน:<br><textarea name="msg"></textarea></td>
+</tr>
+<tr>
+	<td>
+    	<div class="float">
+    	สีพื้นหลัง:<br>
+    		<select name="bgcolor">
+            	<option value="black">ดำ</option>
+                <option value="green">เขียว</option>
+             </select>
+         </div>
+         <div class="float">
+         สีตัวอักษร:<br>
+    		    <select name="fontcolor">
+            	<option value="white">ขาว</option>
+                <option value="navy">น้ำเงินเข้ม</option>
+             </select>
+          </div>
+    </td>
+	<td>
+  			<img id="captcha" src="captcha.png">
+    		อักขระในภาพ:<br>
+            <input type="text" name="captcha" size="8">
+    </td>	
+</tr>
+<tr>
+     <td colspan="2" class="center">
+     	<br><button>โพสต์ข้อคิดเห็น</button>
+     </td>
+ </tr>
+</table>
+</form>
+</body>
+</html>

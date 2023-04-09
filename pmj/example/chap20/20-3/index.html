@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example 20-3</title>
+<style>
+	* {
+		font: 14px tahoma;
+	}
+	body {
+		background: url(bg.jpg);
+	}
+	li { 
+		cursor: pointer; 
+	}
+</style>
+<script src="../../../js/jquery-2.1.1.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		$('ul').append('<li>New Item</li>');	//เพิ่มอิลิเมนต์ใหม่ต่อท้ายที่มีอยู่แล้ว
+	});
+	
+	$(document).on('click', 'li', function() {
+		alert($(this).text());
+	});
+});
+</script>
+</head>
+
+<body>
+ 	<ul>
+ 	 	<li>One</li>
+    	<li>Two</li>
+ 	</ul>
+ 	<button type="button">Add Item</button>
+</body>
+</html>

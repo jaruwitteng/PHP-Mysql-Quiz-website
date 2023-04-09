@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example 21-4</title>
+<style>
+	* {
+		font: 14px tahoma;
+	}
+	body {
+		background: url(bg.jpg);
+		text-align: center;
+		min-width: 400px;
+	}
+	fieldset {
+		display: inline-block;
+		padding: 10px;
+		background: #CCF;
+		text-align: left;
+	}
+	input {
+		width: 200px;
+		background: #ffc;
+		border: solid 1px gray;
+		padding: 2px;
+		margin: 3px;
+	}
+	a {
+		color: blue;
+	}
+	label {
+		display: inline-block;
+		width: 50px;
+	}
+	img {
+		float: left;
+		margin-right: 10px;
+		vertical-align: center;
+	}
+</style>
+<script src="../../../js/jquery-2.1.1.min.js"> </script>
+<script>
+$(function() {
+	$('button').click(function() {
+		var data = $('form').serializeArray();
+		$.ajax({
+			url: 'login.php',
+			data: data,
+			type: 'post',
+			success: callback
+		});
+	});
+});
+
+function callback(result) {
+	//ถ้าผลลัพธ์ที่ส่งกลับมาเป็นคำว่า "success" ให้แสดงข้อความว่าเข้าสู่ระบบ
+	//และลิงก์สำหรับออกจากระบบ จากนั้นให้ซ่อนฟอร์ม
+	if(result == "success") {
+		$('fieldset').html(
+			'<img src="done.png">' +
+			'<b>ท่านเข้าสู่ระบบแล้ว</b><br>' + 
+			'<a href="javascript: location.reload()">ออกจากระบบ</a>'
+		);
+		
+		$('form').css('display', 'none');
+	}
+
+	//ถ้าข้อความที่ส่งกลับมาเป็นคำว่า "error" ให้แสดงข้อความว่าเกิดข้อผิดพลาด
+	else if(result == "error") {
+		alert('ท่านใส่ล็อกอินหรือรหัสผ่านไม่ถูกต้อง');
+	}
+}
+</script>
+</head>
+
+<body>
+<fieldset><legend>สมาชิกเข้าสู่ระบบ</legend>
+<form>
+    <label>Login:</label><input type="text" id="login" name="login"><br>
+    <label>Pswd:</label><input type="password" name="pswd" id="pswd">
+	<button type="button">เข้าสู่ระบบ</button>
+</form>
+</fieldset>
+</body>
+</html>

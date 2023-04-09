@@ -1,0 +1,151 @@
+@charset "utf-8";
+* {
+	font-family: tahoma;
+}
+body {
+	margin: 0px;
+	background: white url(images/bg.jpg) -120px -300px no-repeat fixed;
+}
+header {
+	width: 100%;
+	height: 40px;
+	background: #aaa;
+	padding: 5px;
+	border-bottom: solid 3px orange;
+	position: fixed;
+}
+nav {
+	width: 900px;
+	text-align: left;
+	margin: 7px auto;
+	border: solid 0px ;
+}
+nav a {
+	display: inline-block;
+	color: aqua;
+	text-decoration: none;
+	margin-right: 10px;
+	padding-right: 15px;
+}
+nav a:not(:last-child) {
+	border-right: solid 1px gainsboro;
+}
+nav a:hover {
+	color: yellow;
+}
+nav a img {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	margin-right: 5px;
+	margin-left: 0px;
+	border: none;
+}
+div#container {
+	width: 900px;
+	margin: auto;
+}
+section#logo-banner {
+	margin-top: 22px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+section#breadcrumbs {
+ 	border-bottom: solid 1px silver;
+	margin-bottom: 0px;
+}
+section#breadcrumbs div {
+	display: inline-block;
+	width: 630px;
+	color: green;
+	font-size: 18px;	
+	height: 25px;
+	vertical-align: bottom;
+	overflow: hidden;
+}
+section#breadcrumbs div a {
+	color: blue;
+	text-decoration: none;
+}
+section#breadcrumbs div a:hover {
+	color: red;
+}
+section#breadcrumbs div > span {
+	color: red;
+}
+form#search {
+	display: inline-block;
+	text-align: right;
+	width: 250px;
+	vertical-align: top;
+	height: 27px;
+}
+form#search input[type=text] {
+	background: #eee;
+	border: solid 1px gray;
+	height: 18px;
+}
+article {
+	float: left;
+	width: 650px;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-right: solid 1px silver;
+}
+article h4.page-title {
+	margin: 3px 0px 15px 10px;
+	color: brown;
+}
+aside {
+	float: left;
+	width: 230px;
+	padding-left: 10px;
+}
+br.clear-left {
+	clear: left;
+}
+br.clear-right {
+	clear: right;
+}
+br.clear-both {
+	clear: both;
+}
+footer {
+	border-top: solid 1px silver;
+}
+form#member {
+	background: #cdf;
+	margin: auto;
+	font-size: 12px !important;
+	margin-top: 10px;
+	padding: 5px 0px 10px 10px;
+}
+form#member a {
+	text-decoration: none;
+	color: blue;
+}
+form#member a:hover {
+	color:red;
+}
+form#member * {
+	margin-top: 3px;
+}
+aside ul {
+	margin-left: -20px;
+	margin-top: 3px;
+	list-style-type: square;
+}
+aside ul a {
+	font-size: 14px;
+	text-decoration: none;
+	color: blue;
+}
+aside ul a:hover {
+	color:red;
+}
+footer {
+	color: gray;
+	padding: 10px 0px 20px;
+	text-align: center;
+	font-size: 12px;
+}

@@ -1,0 +1,89 @@
+@charset "utf-8";
+	* {
+		font-family: tahoma;
+	}
+	body {
+		background: url(images/football-stadium.jpg)  no-repeat fixed;
+		margin-top: 10px;
+	}
+	table#container {
+		width: 960px;
+		margin: auto;	
+		background: white;
+	}
+	table#container caption#header {
+		font-size: 36px;
+		color: red;
+		margin-bottom: 5px;
+		text-align: center !important;
+	}
+	table#container tr {
+		vertical-align: top;
+	}
+	td#article {
+		width: 750px;
+		border: solid 1px gray;
+	}
+	td#aside {
+		background: black;
+		padding-left: 10px !important;
+	}
+	td#aside a {
+		width: 96%;
+		display: block;
+		color: aqua;
+		text-decoration: none;
+		padding: 8px 0px;
+	}
+	td#aside a {
+		border-bottom: solid 1px gray;
+	}
+	td#aside a:hover {
+		color: yellow;
+	}
+	td#aside a img {
+		width: 24px;
+		height: 24px;
+		vertical-align: middle;
+		margin-right: 5px;
+		margin-left: 0px;
+		border: none;
+	}
+	td#footer {
+		color: gray;
+		font-size: 12px;
+	}
+	td#footer a {
+		color: blue;
+	}
+	td#footer a:hover {
+		color:red;
+	}
+	div#top {
+		background: lightgray url(images/football-banner-top.png) no-repeat;
+		height: 30px;
+		font-size: 20px;
+		color: tomato;
+		padding: 5px
+	}
+	div#top img {
+		display: inline-block;
+		max-height: 24px;
+		margin-right: 5px;
+		vertical-align: text-bottom;
+	}
+	.text-center {
+		text-align: center !important;
+	}
+	.text-left {
+		text-align: left !important;
+	}
+	select#select-league {
+		font-size: 12px;
+		background: #FFC;
+		border: solid 1px gray;
+	}
+	span.table-caption {
+		float:right; 
+		margin-top: 8px;
+	}

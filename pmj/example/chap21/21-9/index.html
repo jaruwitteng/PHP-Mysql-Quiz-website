@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example 21-9</title>
+<style>
+	* {
+		font: 14px tahoma;
+	}
+	body {
+		background: url(bg.jpg);
+		min-width: 300px;
+	}
+	fieldset {
+		width: 300px;
+		margin: 10px 0px;
+		border: solid 2px green;
+		background: #de9;
+	}
+	legend {
+		font-size: 16px;
+		color: #f30;
+		font-weight: bold;
+	}
+	input[type=file] {
+		margin: 2px 0px;
+	}
+	button {
+		background: steelblue;
+		color: white;
+		border: solid 1px #333;
+		border-radius: 4px;
+		padding: 2px 15px;
+		margin-right: 30px;
+	}
+	button:hover {
+		background: yellow;
+		color: red;
+	}
+	progress {
+		width: 150px;
+	}
+	fieldset > span {
+		display: inline-block;
+		width: 80px;
+		font-weight: bold;
+	}
+</style>
+<script src="../../../js/jquery-2.1.1.min.js"></script>
+<script src="../../../js/jquery.form.min.js"></script>
+<script>
+$(function(){
+	$('form').ajaxForm({
+		url: 'upload.php',
+		type: 'post',
+		dataType: 'html', 
+    	beforeSend: function(){
+			$('#pg').val(0);  //กำหนดค่า progress ให้เป็น 0
+       	 	$('#pc').html('0%');  //ให้แสดงค่า 0%
+  	  	},
+   	 	uploadProgress: function(event, position, total, percent){
+			$('#pg').val(percent);
+       	 	$('#pc').html(percent + '%');
+    	},
+    	success: function(result){
+			$('#pg').val(100);
+        	$('#pc').html('100%');
+		
+			$('#result').html(result);
+			$('form')[0].reset();
+    	},
+		error: function(xhr, textStatus){
+			alert(textStatus);
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<form>
+	<fieldset><legend>เลือกไฟล์ (ไม่เกิน  1MB):</legend>
+		<input type="hidden" name="MAX_FILE_SIZE" value="1048576">
+		<input type="file" name="file">
+	</fieldset>
+	<button type="submit">โพสต์</button>
+	<progress id="pg" value="0" max="100"></progress>
+	<span id="pc">0%</span>
+</form>
+<div id="result"></div>
+</body>
+</html>

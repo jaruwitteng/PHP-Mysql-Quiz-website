@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Example 21-5</title>
+<style>
+	* {
+		font: 14px tahoma;
+	}
+	body {
+		background: url(bg.jpg);
+	}
+	table {
+		border-collapse: collapse;
+		margin: auto;
+	}
+	tr:first-child {
+		background: green !important;
+		color: yellow;
+	}
+	th:nth-child(1) {
+		width: 150px;
+	}
+	th:nth-child(2) {
+		width: 50px;
+	}
+	tr:nth-of-type(odd) {
+		background: #ee9;
+	}
+	tr:nth-of-type(even) {
+		background: #9c9;
+	}
+	th, td {
+		padding: 5px;
+	}
+	th:first-child, td:first-child {
+		border-right: solid 1px white;
+	}
+	button {
+		background: #F30;
+		color: white;
+		padding: 0px 10px;
+		border: solid 1px aqua;
+		border-radius: 3px;
+		margin: 1px 10px;
+	}
+	button:hover {
+		background: yellow;
+		color: red;
+	}
+</style>
+<script src="../../../js/jquery-2.1.1.min.js"> </script>
+<script>
+$(function() {
+	$('button').click(function(event) {
+		var d = "id=" + $(event.target).attr('data-id');
+		$.ajax({
+			url: "delete-row.php",
+			data: d,
+			type: "get",
+			dataType: "script"
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<table>
+<tr><th>ข้อมูล</th><th>ลบ</th></tr>
+<tr><td>PHP</td><td><button data-id="p1">ลบ</button></td></tr>
+<tr><td>MySQL</td><td><button data-id="p2">ลบ</button></td></tr>
+<tr><td>jQuery</td><td><button data-id="p3">ลบ</button></td></tr>
+<tr><td>JavaScript</td><td><button data-id="p4">ลบ</button></td></tr>
+<tr><td>HTML3</td><td><button data-id="p5">ลบ</button></td></tr>
+<tr><td>CSS3</td><td><button data-id="p6">ลบ</button></td></tr>
+</table>
+</body>
+</html>
